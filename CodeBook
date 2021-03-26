@@ -92,6 +92,29 @@ They were recoded during the analysis as follows:
 average feature values were calculated over each activity and subject id
 -------------------------------------------------------------------------------------------
 
-The following steps were taken to obtain the final output dataset:
-==================================================================
-- 
+------------------------------------
+Dataset files used in this analysis:
+------------------------------------
+- "README.txt"
+- "features.txt": list of features
+- "activity_labels.txt": list to link class labels with activity name
+- "train/X_train.txt": training set
+- "train/y_train.txt": training labels
+- "train/subject_train.txt": subject who performed the activity in training set (range 1-30)
+- "test/X_test.txt": test set
+- "test/y_test.txt": test labels
+- "test/subject_test.txt": subject who performed the activity in test set (range 1-30)
+
+-----------------------------------------------------
+Data files were analyzed using the following methods:
+-----------------------------------------------------
+- above files were read into RStudio using R version 4.0.4
+- column names were added to the X files according to the features file
+- test and training X files were combined
+- only column names/features containing "mean" or "std" were kept in the dataset
+- columns for activity labels and subject id were added to the subsetted data
+- activity was recoded with the activity name rather than class label
+- dataset was reshaped to become a long dataset for different values of activity and subject
+- feature average was calculated over each value of activity and subject
+- dataset again reshaped to gather averages into one column for tidy dataset
+- final tidy dataset was written out as a text file
